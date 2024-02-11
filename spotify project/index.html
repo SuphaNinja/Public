@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="concert-image" src="images/concert-banner.jpg" alt="Image of a Concert.">
+            <div class="banner-content">
+                <h1>Playlist</h1>
+                <p>Check out our library and play our songs directly in the app!</p>
+            </div>
+        </header>
+        <main>
+            <div class="search-music">
+                <input id="search-input" type="text" placeholder="Search for a song ...">
+            </div>
+            <div class="grid-container">
+                <div class="grid-songs">  
+                        <div>
+                            <p class="top-5">Top 5:</p>
+                            <div class="song">
+                                <p class="song-order">1</p>
+                                <img class="play-button-image" src="images/play-button (2).png" alt="Play!">
+                                <img class="pause-button-image hidden" src="images\pause.-icon.lnk" alt="Pause">
+                                <p class="song-details">Window Shopper <span class="song-artist">50 Cent</span></p>
+                            </div>
+                            <div class="song">
+                                <p class="song-order">2</p>
+                                <img class="play-button-image" src="images/play-button (2).png" alt="Play!">
+                                <img class="pause-button-image hidden" src="images\pause.-icon.lnk" alt="Pause">
+                                <p class="song-details">Love Is Only A Feeling <span class="song-artist">Joey Bada$$</span></p>
+                            </div>
+                            <div class="song" >
+                                <p class="song-order">3</p>
+                                <img class="play-button-image" src="images/play-button (2).png" alt="Play!">
+                                <img class="pause-button-image hidden" src="images\pause.-icon.lnk" alt="Pause">
+                                <p class="song-details">Superman <span class="song-artist">Eminem</span></p>
+                            </div>
+                            <div class="song">
+                                <p class="song-order">4</p>
+                                <img class="play-button-image" src="images/play-button (2).png" alt="Play!">
+                                <img class="pause-button-image hidden" src="images\pause.-icon.lnk" alt="Pause">
+                                <p class="song-details">When It Rain It Pours <span class="song-artist">50 Cent</span></p>
+                            </div>
+                            <div class="song">
+                                <p class="song-order">5</p>
+                                <img class="play-button-image" src="images/play-button (2).png" alt="Play!">
+                                <img class="pause-button-image hidden" src="images\pause.-icon.lnk" alt="Pause">
+                                <p class="song-details">
+                                    Welcome <span class="song-artist">J.Cole</span>
+                                </p>
+                            </div>
+                        </div>
+                </div>
+                <div class="recommended-artists-container">
+                    <div class="recommended-artist-1">
+                        <h3>Recommended artists for you:</h3>
+                        <p>50 Cent</p>
+                    </div>
+                </div>
+                <div class="hottest-songs-container">
+                    <div>
+                        <h3>Hottest songs right now:</h3>
+                        <p>Black and Yellow</p>
+                        <p>Black and Yellow</p>
+                        <p>Black and Yellow</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    
+    <nav class="navbar-container">
+        <p class="navbar-click">PlayLists <br>></p>
+        <div class="navigation-playlist hidden">
+            <div>
+                <a href="">Home</a>
+                <a href="pages/50cent.html"> 50 Cent</a>
+                <a href="">J.Cole</a>
+                <a href="">Eminem </a>
+                <a href="">Joey Bada$$ </a> 
+            </div>
+            <p class="close-navbar"> < </p>
+        </div>
+    </nav>
+    <footer id="player">
+        <div class="currently-playing">
+            <p id="song-name"></p>
+            <p id="song-artist"></p>
+        </div>
+        <div>
+            <img src="" alt="cover Image" class="cover-image hidden">
+        </div>
+        <div class="player-controls">
+            <div id="previous-song"><</div>
+            <button class="player-play-btn" data-playing="false">
+                <div class="player-icon-play">
+                    <img src="images/play-button (2).png" alt="Play!">
+                </div>
+                <div class="player-icon-pause hidden">
+                    <img src="C:\Users\sidri\Desktop\Projects\spotify project\images\pause.-icon.lnk" alt="Pause!">
+                </div>
+            </button>
+            <div id="next-song">></div>
+        </div>
+        <div class="player-timeline">
+
+            <span class="player-time player-time-current">0:0</span>
+
+            <div class="player-progress">
+                <div class="player-progress-filled"></div>
+            </div>
+
+            <span class="player-time" id="player-time-duration">0:0</span>
+ 
+            <div class="volume-button">
+                <button id="volume-button">
+                    <img class="volume-button-active" src="images/—Pngtree—volume icon_4490396.png" alt="Unmute">
+                    <img class="volume-button-mute hidden" src="images/sound-off-icon-40963.png" alt="Mute">
+                </button>
+                <div class="adjust-volume-bar">
+                    <div class="adjust-volume"></div>
+                </div>
+            </div>
+        </div>
+        
+
+        <audio src="C:\Users\sidri\Desktop\Projects\spotify project\songs\50 Cent - Window Shopper (Official Music Video).mp3">
+            Your browser doesn't support the audio element.
+        </audio>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html> 
