@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Exercises</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-info">
+            <div class="title">
+                <h3>Company Name</h3>
+            </div>
+            <div class="nav-buttons">
+                <button class="menu-button">Menu</button>
+            </div>
+        </div>
+        <div class="navbar-items hidden">
+            <ul>
+                <li>Home</li>
+                <li>About</li>
+                <li>Browse</li>
+                <li>Contact Us</li>
+                <li>Support</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="item-bar">
+        <button class="add-element-button">add</button>'
+        <input class="add-item-input" type="text" placeholder="add a item">
+    </div>
+    <ul class="add-element-list"></ul>
+
+
+    <div class="tasks-nav">
+        <button class="complete-task-button">Complete Task</button>
+        <button class="uncomplete-task-button">Remove Last Task</button>
+        <input class="task-input" type="text" placeholder="Add a task">
+        <ul class="task-list">
+            <p>Tasks:</p>
+        </ul>
+    </div>
+    <p><span class="completed-tasks">0</span> / <span class="total-tasks">0</span>
+        Tasks complete</p>
+    <div class="progress-bar">
+        <div class="progress-bar-filled"></div>
+    </div>
+
+    <div class="input-div">
+        <input class="search-image" type="text" placeholder="Paste a Image Source!">
+    </div>
+    <div class="slide-container">
+        <button class="slidebutton-left">Previous Image</button>
+        <img class="slide-images" src="" alt="Image">
+        <button class="slidebutton-right">Next Image</button>
+    </div>
+
+
+    <script src="index.js"></script>
+</body>
+</html>

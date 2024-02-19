@@ -1,0 +1,152 @@
+body {
+    margin-top: 0;
+    height: 10000px;
+}
+
+.hidden {
+    display: none;
+}
+
+.navbar {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 25px;  
+    background-color: black;
+}
+
+.navbar-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.menu-button {
+    border: none;
+    background: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.navbar-items  {
+    text-align: end;
+    
+}
+
+.navbar-items ul {
+    font-size: 20px;
+    list-style: none;
+    
+}
+
+.navbar-items li {
+    margin-bottom: 10px;
+    
+}
+
+.add-item-input {
+    background-color: black;
+    color: white;
+}
+
+.item-bar  {
+    display: flex;
+}
+
+.complete-task-button,
+.uncomplete-task-button {
+    border: none;
+    background-color: #000;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    display: flex;
+    position: relative;
+    background-color: black;
+    height: 25px;
+    width: 500px;
+    border-radius: 25px;
+    flex-basis: 100%;
+}
+
+.progress-bar-filled {
+    background-color: green;
+    height: 25px;
+    width: 500px;
+    border-radius: 25px;
+    flex-basis: 0%;
+}
+
+p {
+    font-size: 20px;
+}
+
+
+.tasks-nav {
+    margin-bottom: 20px;
+    width: 50%;
+    display: flex;
+    margin-top: 50px;
+    gap: 10px;
+    height: 50px;
+}
+
+.task-input {
+    border: none;
+    color: white;
+    background-color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+.task-list {
+    list-style-type: decimal;
+}
+
+.input-div {
+    background-color: #000;
+    margin-top: 100px;
+    height: 100px;
+    text-align: center;
+    text-justify: center;
+    margin-bottom: 20px;
+}
+
+.search-image {
+    margin-top: 10px;
+    height:75%;
+    width: 80%;
+    font-size: 20px;
+}
+
+.search-image::placeholder {
+    color: #000;
+    font-size: 25px;
+}
+
+.slide-container{
+    margin-left: 0;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    justify-content: center;
+    height: 500px;
+}
+
+.slidebutton-left,
+.slidebutton-right {
+    border: none;
+    background-color: aqua;
+    padding: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.slide-images {
+    margin-right: 50px;
+    margin-left: 50px;
+    width: 80%;
+    height: 90%;
+}

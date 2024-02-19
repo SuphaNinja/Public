@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YT Notetaker</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+</head>
+<body class="bg-black">
+    <header class="bg-blue-600 p-4 " >
+        <h1 class="text-white text-2xl">
+            YouTube Notetaker</h1>
+    </header>
+
+    <main class="grid grid-cols-1 md:grid-cols-2 mt-8 mx-8 gap-10">
+        <div id="video-section">
+            <iframe id="video-player" class="h-0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="text-white text-xl mb-2">Video URL:</p>
+            <input id="video-url" class="w-full" type="text" placeholder="https://youtube.com/">
+            <button id="watch-button" class="bg-red-500 text-white py-2 mt-3 w-full"> Watch!</button>
+        </div>
+        <div id="note-section">
+            <div>
+                <p class="text-white text-xl mb-2">Enter note:</p>
+                <p id="error-message"></p>
+                <input id="note" class="w-full" type="text" placeholder="Write something">
+                <button id="save-button" class="bg-green-400 text-white py-2 mt-3 w-full"> Save note!</button>
+            </div>
+            <div>
+                <h3 class="text-white text-2xl mt-6">
+                    Notes:
+                </h3>
+                <ul id="notes-list" class="mt-5">
+                    <p id="no-notes-text" class="text-white">
+                        You have no notes yet, added notes show up here:
+                    </p>
+                   <!-- <li class=" bg-blue-400 p-2 text-white text-center ">note</li>-->
+                </ul>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+<script src="JS/main.js"></script>
+</html>
