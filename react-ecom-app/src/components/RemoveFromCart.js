@@ -7,11 +7,27 @@ function RemoveFromCart () {
 
     const { id } = useParams();
     
+    function RemoveFromCart () {
 
+        const { id } = useParams();
+        
+    
+        
+        const [removeCart, setRemoveCart] = useContext(CartContext);
+    
+        const removeItem = () => {
+    
+            const updatedCart = removeCart.filter((item) => item.id !== id);
+            setRemoveCart(updatedCart);
+        }
+        return removeItem;
+        
+       
+    }
     
     const [removeCart, setRemoveCart] = useContext(CartContext);
 
-    const removeItem = (idToRemove) => {
+    const removeItem = () => {
 
         const updatedCart = removeCart.filter((item) => item.id !== id);
         setRemoveCart(updatedCart);
@@ -21,6 +37,6 @@ function RemoveFromCart () {
    
 }
 
-export default RemoveFromCart;
+
 
 

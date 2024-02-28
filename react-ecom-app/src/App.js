@@ -11,13 +11,15 @@ import ProductsPage from "./pages/ProductsPage";
 
 import CartContext from "./context/CartContext";
 import { useState } from "react";
-
+import { PurchaseHistoryContext } from "./context/PurchaseHistoryContext";
 function App() {
 
   const [cart, setCart] = useState([]);
+  const [purchaseHistory, setPurchaseHistory] = useState([]);
 
   return (
     <div className="bg-black h-[5000px]">
+      <PurchaseHistoryContext.Provider value={[purchaseHistory, setPurchaseHistory]}>
       <CartContext.Provider value={[cart, setCart]}>
         <Navbar/>
           <Routes>
@@ -29,6 +31,7 @@ function App() {
             <Route path="/cart" element={<Cart />}/>
           </Routes>
       </CartContext.Provider>
+      </PurchaseHistoryContext.Provider>
     </div>
   );
 }
