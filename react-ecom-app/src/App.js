@@ -10,28 +10,32 @@ import Cart from "./pages/Cart";
 import ProductsPage from "./pages/ProductsPage";
 
 import CartContext from "./context/CartContext";
+import SavedPersonalDetailsContext from "./context/SavedPersonalDetailsContext";
+import CartHistoryContext from "./context/CartHistoryContext";
 import { useState } from "react";
-import { PurchaseHistoryContext } from "./context/PurchaseHistoryContext";
-function App() {
 
-  const [cart, setCart] = useState([]);
-  const [purchaseHistory, setPurchaseHistory] = useState([]);
+function App() {
+  const [ cartHistory, setCartHistory ] = useState([]);
+  const [ cart, setCart ] = useState([]);
+  const [ savedPersonalDetails, setSavedPersonalDetails ] = useState([]);
 
   return (
     <div className="bg-black h-[5000px]">
-      <PurchaseHistoryContext.Provider value={[purchaseHistory, setPurchaseHistory]}>
       <CartContext.Provider value={[cart, setCart]}>
-        <Navbar/>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/browse" element={<Browse />}/>
-            <Route path="/products" element={<ProductsPage />}/>
-            <Route path="/product/:id" element={<Product />} />
-            <Route path="/contact" element={<Contact />}/>
-            <Route path="/cart" element={<Cart />}/>
-          </Routes>
+        <CartHistoryContext.Provider value={[cartHistory, setCartHistory]}>
+        <SavedPersonalDetailsContext.Provider value={{ savedPersonalDetails, setSavedPersonalDetails }}>
+          <Navbar/>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/browse" element={<Browse />}/>
+              <Route path="/products" element={<ProductsPage />}/>
+              <Route path="/product/:id" element={<Product />} />
+              <Route path="/contact" element={<Contact />}/>
+              <Route path="/cart" element={<Cart />}/>
+            </Routes>
+          </SavedPersonalDetailsContext.Provider>
+          </CartHistoryContext.Provider>
       </CartContext.Provider>
-      </PurchaseHistoryContext.Provider>
     </div>
   );
 }

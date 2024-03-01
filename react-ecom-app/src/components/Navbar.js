@@ -3,10 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { useContext } from "react";
 import CartContext from "../context/CartContext";
 
+
 function Navbar () {
+    
     const [cart, setCart] = useContext(CartContext);
     const location = useLocation();
-
+    
+    
     const getCurrentPageTitle = () => {
         switch (location.pathname) {
             case "/":
