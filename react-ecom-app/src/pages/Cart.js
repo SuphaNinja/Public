@@ -46,6 +46,11 @@ function Cart () {
         }));
     }
 
+    const test = () => {
+        cartHistory.items.map((item, index) => {
+            console.log(item)
+        })
+    }
 
 //----------COMPLETE THE ORDER AND SAVE THE SUBMITTED INFORMATION.------------------------
 
@@ -78,8 +83,7 @@ function Cart () {
         setCart([]);
         setShowCheckout(false);
         setOrderComplete(false);  
-        console.log(cartHistory);
-        test()   
+        console.log(cartHistory); 
     };
 
     const clearCart = () => {
@@ -154,23 +158,19 @@ function Cart () {
 
    )
 
-}
 
 
-export default Cart;
+function PurchaseHistory() {
 
 
-function PurchaseHistory({}) {
+    const [ showOrder, setShowOrder ] = useState(false);
 
-    const { savedPersonalDetails, setSavedPersonalDetails } = useContext(SavedPersonalDetailsContext);
-    const [ cartHistory, setCartHistory ] = useContext(CartHistoryContext);
-
-
-    const [ showOrder, setShowOrder] = useState(true);
-
-
+    const toggleShowOrder = () => {
+        setShowOrder(!showOrder)
+    }
+    
     return (
-        <div className="flex">
+        <div className="flex ">
             <div className="flex flex-col gap-4 w-2/5">
                 <h1 className="text-black text-2xl font-bold">Purchase History:</h1>
                 {savedPersonalDetails.map((data, index) => (
@@ -188,25 +188,50 @@ function PurchaseHistory({}) {
                             <p><span className="text-black font-semibold">Card number:</span> {data.cardNumber}</p>
                             <p><span className="text-red-500 font-semibold">Cvc:</span> {data.cvc}</p>
                             <p><span className="text-black font-semibold">Expiration Date:</span> {data.expirationDate}</p>
-                            <button className="p-2 mt-2 text-white bg-black rounded-xl">Show Order</button>
+                            <button onClick={toggleShowOrder} className="p-2 mt-2 text-white bg-black rounded-xl">Show Order</button>
                         </div>
                     </div>
                 ))}
             </div>
-            {showOrder ? 
-            <div className="bg-green-500 mt-12 rounded-3xl p-4 ml-24 w-[40rem]">
-                 {cartHistory.items.map((item, index) => (
-                    <div key={index}>
-                        <p className="text-2xl">{item.name}</p>
-                    </div>
-                ))}
-            </div>
+            {showOrder === true ?
+            <div className="gap-4">
+                <div className="bg-green-500 mt-12 text-black rounded-3xl p-6 ml-24 w-[40rem]">
+                    <h1 className="text-4xl font-semibold mb-4">My orders:</h1>
+                    {Object.values(cartHistory.items.reduce((acc, historyItem) => {
+                        if (!acc[historyItem.id]) {
+                            acc[historyItem.id] = {...historyItem, quantity: 1};
+                        } else {
+                            acc[historyItem.id].quantity += 1;
+                        }
+                        return acc;
+                    }, {}))
+                    .map(( item, index ) => (
+                        <div className="mt-4 mb-2" key={index}>
+                            <div className="">
+                            <p><span className="font-semibold">{item.name}</span></p>
+                            <p>Price: <span className="font-semibold">{item.priceUSD}$</span> </p>
+                            <p>Quantity: <span className="font-semibold">{item.quantity}</span></p>
+                            <p></p>
+                            </div>
+                        </div>
+                    ))}
+                    <p>Total Price: <span className="font-semibold text-red-700">{cartHistory.prevPrice}$</span></p>            
+                </div>
+            </div> 
             : null
-        }
+        } 
         </div>
     )
+}
+
 
 }
+
+
+export default Cart;
+
+
+
 
 
 

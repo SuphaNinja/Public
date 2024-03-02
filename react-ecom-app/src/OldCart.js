@@ -290,7 +290,7 @@ function ShowPurchaseHistory () {
                         <p className="text-2xl font-semibold">Total Price: <span className="text-2xl mr-8 font-semibold">{purchaseHistory.totalPrice}$</span></p>
                     </div>
                     <div>
-                        {purchaseHistory.items.map(( item, index) => (
+                        {purchaseHistory.items.map(( item, index ) => (
                             <div className="bg-red-500 h-[30rem]">
                                 <p className="text-6xl">{item.name}</p>
                             </div>
