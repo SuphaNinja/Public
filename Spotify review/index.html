@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Cent Playlist</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div class="banner-container">
+                <img class="banner-image" src="C:\Users\sidri\Desktop\Projects\spotify project\images\50-cent-banner.webp" alt="Image of a Concert.">
+                <div class="banner-content">
+                    <h1>50 Cent</h1>
+                    <p>Get Rich or Die Trying</p>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="search-music">
+                <input id="search-input" type="text" placeholder="Search for a song ...">
+            </div>
+            <div class="playlist-container">
+                <div class="playlist-songs"> 
+                </div>
+                <div class="playlist-image">
+                    <img src="images\50-Cent-profile.jpeg" alt="Picture of 50 Cent">
+                </div>
+            </div>
+        </main>
+    </div>
+    <nav class="navbar-container">
+        <p class="navbar-click">PlayLists <br>></p>
+        <div class="navigation-playlist" id="hidden">
+            <div>
+                <a href="">Home</a>
+                <a href="pages/50cent.html"> 50 Cent</a>
+                <a href="">J.Cole</a>
+                <a href="">Eminem </a>
+                <a href="">Joey Bada$$ </a>
+            </div>
+            <p class="close-navbar"> < </p>
+        </div>
+    </nav>
+    <footer id="player">
+        <div class="currently-playing">
+            <p id="song-name">Play Something!</p>
+            <p id="song-artist"></p>
+        </div>
+        <div>
+            <img src="" alt="cover Image" class="cover-image hidden">
+        </div>
+        <div class="player-controls">
+            <div id="previous-song"><</div>
+            <button class="player-play-btn" data-playing="false">
+                <div class="player-icon-play">
+                    <img src="images\play-button.png" alt="Play!">
+                </div>
+                <div class="player-icon-pause hidden">
+                    <img src="C:\Users\sidri\Desktop\Projects\spotify project\images\pause.-icon.lnk" alt="Pause!">
+                </div>
+            </button>
+            <div id="next-song">></div>
+        </div>
+        <div class="player-timeline">
+            <span class="player-time" id="player-time-current">0:0</span>
+            <div class="player-progress">
+                <div class="player-progress-filled"></div>
+            </div>
+            <span class="player-time" id="player-time-duration">0:0</span>
+            <div class="volume-button">
+                <button id="volume-button">
+                    <img class="volume-button-active" src="images\—Pngtree—volume icon_4490396.png" alt="Unmute">
+                    <img class="volume-button-mute hidden" src="images\sound-off-icon-40963.png" alt="Mute">
+                </button>
+                <div class="adjust-volume-bar">
+                    <div class="adjust-volume"></div>
+                </div>
+            </div>
+        </div>
+        <audio src="">
+            Your browser doesn't support the audio element.
+        </audio>
+    </footer>
+    <script src="js/index.js"></script>
+</body>
+</html> 

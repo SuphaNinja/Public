@@ -312,7 +312,7 @@ window.addEventListener("load", () => {
         if (song) {
             // Play the song URL
             const audio =   audioElement.songURLs;
-            audioElement    .play();
+            audioElement.play();
             console.log(currentSongIndex);
         } else {
             console.log("Song not found");
