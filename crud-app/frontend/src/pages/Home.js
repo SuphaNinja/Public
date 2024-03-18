@@ -1,31 +1,22 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-
+import { GetPosts } from "../lib/queries/GetPosts";
+import { useQuery } from "@tanstack/react-query";
 
 export default function Home () {
     const token = localStorage.getItem("token");
-    const [ posts, setPosts ] = useState([]);
     const [ error, setError ] = useState("");
 
     const [ userData, setUserData ] = useState(null);
 
     const  { loggedIn, setLoggedIn }  = useAuth();
 
-    const getPosts = async () => {
-            try {
-                await fetch("http://localhost:4000/get-posts", {
-                    method: "GET",
-                }).then(async (data) => {
-                        const response = await data.json();
-                        setPosts(response);
-                    });
-            
-            } catch (error) {
-                console.log("Error fetching country data: ", error);
-                setError("Failed to fetch country data. Please try again later.");
-            } 
-        }
+    
+    const { data: posts, isLoading, isError } = useQuery({
+        queryKey: "posts",
+        queryFn: GetPosts
+    });
 
     const getUser = async () => {
         try {
@@ -54,7 +45,6 @@ export default function Home () {
 
     useEffect(() => {
         getUser();
-        getPosts();
     }, []);
 
     const test = () => { 
@@ -63,10 +53,10 @@ export default function Home () {
     };
 
 
-
+if (!isLoading) {
     return (
         <div className="h-screen pt-12 px-12 text-center bg-gradient-to-br from-emerald-500 to-cyan-500 to-60% from-20%">
-            {loggedIn === true ?
+            {loggedIn ?
             <div>
             <h2 className="text-4xl mb-6 font-bold underline">Posts</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -91,4 +81,4 @@ export default function Home () {
             }
         </div>
     )
-}
+}}

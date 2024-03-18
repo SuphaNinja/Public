@@ -16,7 +16,8 @@ import Profile from "./pages/Profile";
 import MyPosts from "./pages/MyPosts";
 import DropFiles from "./pages/DropFiles";
 import Testing from "./pages/Testing";
-
+import TanStack from "./pages/TanStack";
+import TanStackTest from "./pages/TanStackTest";
 
 
 function App() {
@@ -66,6 +67,8 @@ function App() {
           <Route path="myposts" element={<MyPosts />} />
           <Route path="dropfiles" element={<DropFiles />} />
           <Route path="testing" element={<Testing />} />
+          <Route path="tanstack" element={<TanStack />} />
+          <Route path="tanstacktest" element={<TanStackTest />} />
         </Routes>
       
     </main>

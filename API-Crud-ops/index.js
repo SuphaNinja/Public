@@ -134,7 +134,7 @@ app.delete("/delete-review/:reviewId", async (req, res) => {
     const deletedReview = await prisma.review.delete({
         where: { id: reviewId }
     });
-    res.send({ Success: "Deleted review by " + deletedReview.name})
+    res.send({ success: "Deleted review by " + deletedReview.name})
 });
 
 app.get("/get-review/:reviewId", async (req, res) => {

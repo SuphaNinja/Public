@@ -51,12 +51,15 @@ export default function NavBar () {
     }, [setLoggedIn]);
 
     const test = () => {
+        console.log(user)
     }
-
+if (!fetching || !loggedIn) {   
     return (
         <div className="items-center flex justify-between gap-6 bg-black h-24 md:p-4">
             <Link to="/" className=" text-xl md:text-5xl ml-4 tracking-wide mr-auto bg-gradient-to-r from-blue-500 to-emerald-400 text-center inline-block text-transparent bg-clip-text font-bold"> Travel-Mania </Link>
             <h1 className="text-5xl bg-gradient-to-r from-emerald-500 to-cyan-500 bg-clip-text text-transparent mx-auto font-serif font-extrabold">{getCurrentPageTitle()}</h1>
+            <Link to="tanstacktest" className="transition transform ease-in-out duration-300 hover:text-white hover:from-blue-500 hover:to-purple-500 text-black text-xl bg-gradient-to-r from-purple-500 to-blue-500 md:px-4 py-2 rounded-xl font-semibold"> TanStackTest</Link>
+            <Link to="tanstack" className="transition transform ease-in-out duration-300 hover:text-white hover:from-blue-500 hover:to-purple-500 text-black text-xl bg-gradient-to-r from-purple-500 to-blue-500 md:px-4 py-2 rounded-xl font-semibold"> TanStack</Link>
             <Link to="testing" className="transition transform ease-in-out duration-300 hover:text-white hover:from-blue-500 hover:to-purple-500 text-black text-xl bg-gradient-to-r from-purple-500 to-blue-500 md:px-4 py-2 rounded-xl font-semibold"> Testing </Link>
             <Link to="dropfiles" className="transition transform ease-in-out duration-300 hover:text-white hover:from-blue-500 hover:to-purple-500 text-black text-xl bg-gradient-to-r from-purple-500 to-blue-500 md:px-4 py-2 rounded-xl font-semibold"> DropFiles </Link>
             <Link to="/addcountry" className="transition transform ease-in-out duration-300 hover:text-white hover:from-blue-500 hover:to-purple-500 text-black text-xl bg-gradient-to-r from-purple-500 to-blue-500 md:px-4 py-2 rounded-xl font-semibold"> Create Post</Link>
@@ -76,4 +79,4 @@ export default function NavBar () {
             )}
         </div>
     )
-}
+}}
