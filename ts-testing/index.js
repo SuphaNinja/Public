@@ -23,3 +23,4 @@ class Person {
     }
 }
 const peter = new Person("Peter");
+console.log(users)

@@ -42,3 +42,4 @@ class Person implements iName{
 }
 
 const peter = new Person("Peter");
+console.log(users)
